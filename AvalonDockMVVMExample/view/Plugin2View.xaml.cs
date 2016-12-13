@@ -12,18 +12,14 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using AvalonDockMVVMExample.viewmodel;
-using Fluent;
-using WpfAppBar;
 
-namespace AvalonDockMVVMExample {
+namespace AvalonDockMVVMExample.view {
 	/// <summary>
-	/// Interaction logic for MainWindow.xaml
+	/// Interaction logic for Plugin2View.xaml
 	/// </summary>
-	public partial class MainWindow : Window {
-		public MainWindow() {
+	public partial class Plugin2View : UserControl {
+		public Plugin2View() {
 			InitializeComponent();
-			DataContext = new MainWindowViewModel();
 		}
 	}
 }
