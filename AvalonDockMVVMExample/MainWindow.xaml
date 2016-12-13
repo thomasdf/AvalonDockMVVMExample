@@ -12,10 +12,27 @@
         Title="MainWindow" Height="350" Width="525">
 
     <Grid>
-        <dock:DockingManager Grid.Row="1" DataContext="{Binding DockManagerViewModel}"
+        <Grid.RowDefinitions>
+            <RowDefinition Height="300"></RowDefinition>
+            <RowDefinition Height="300"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Ribbon x:Name="ribbon" Grid.Row="1" SelectedIndex="0">
+            <RibbonApplicationMenu>
+                <RibbonTab Header="DisMenu">
+                    <RibbonGroup>
+                        <RibbonButton Content="Wow"></RibbonButton>
+                        <RibbonButton Content="Sush"></RibbonButton>
+                        <RibbonButton Content="Butans"></RibbonButton>
+                    </RibbonGroup>
+                </RibbonTab>
+            </RibbonApplicationMenu>
+        </Ribbon>
+        <dock:DockingManager Grid.Row="2" DataContext="{Binding DockManagerViewModel}"
                              DocumentsSource="{Binding Documents}" AnchorablesSource="{Binding Anchorables}" >
             <dock:DockingManager.Resources>
-                <!-- add views for specific ViewModels -->
+
+                <!--add views for specific ViewModels-->
+
                 <DataTemplate DataType="{x:Type vm:PluginViewModel}">
                     <v:Plugin1View />
                 </DataTemplate>
@@ -24,6 +41,5 @@
                 </DataTemplate>
             </dock:DockingManager.Resources>
         </dock:DockingManager>
-
     </Grid>
 </Window>
